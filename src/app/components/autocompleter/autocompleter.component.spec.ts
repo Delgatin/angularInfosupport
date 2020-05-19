@@ -1,12 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AutocompleterComponent } from './autocompleter.component';
+import {HighLighterService} from '../../services/high-lighter.service';
 
 describe('AutocompleterComponent', () => {
-  let autocompleter: AutocompleterComponent
+  let autocompleter: AutocompleterComponent;
+  const highLighterService = new HighLighterService();
 
   beforeEach(() => {
-    autocompleter = new AutocompleterComponent();
+    autocompleter = new AutocompleterComponent(highLighterService);
   });
 
   it('should filter all items containing e', () => {

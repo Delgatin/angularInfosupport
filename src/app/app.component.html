@@ -5,7 +5,7 @@
   <title>My Trips</title>
 </head>
 <body>
-<app-autocompleter [data]="contacts"></app-autocompleter>
+<app-autocompleter [data]="contacts" [displayProperty]="propertyToDisplay" (itemSelected)="itemSelectedEvent($event)"></app-autocompleter>
 <div class="jumbotron">Hello {{title}}</div>
 
 <div id="inputReactiveForm">

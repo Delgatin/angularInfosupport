@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Contact } from './models/contact';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {ContactNamePipe} from './pipes/contact-name.pipe';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,7 @@ export class AppComponent {
     surname: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.pattern('^.+@.+\\.nl$')])
   });
+  propertyToDisplay: 'firstName';
 
   addReactiveFormContact() {
     this.contacts.push(this.reactiveFormGroup.value);
@@ -36,5 +38,9 @@ export class AppComponent {
   removeContact(contact) {
     this.contacts.splice(contact, 1);
     console.log('delete');
+  }
+
+  itemSelectedEvent(itemSelected: any) {
+    console.log(itemSelected);
   }
 }
