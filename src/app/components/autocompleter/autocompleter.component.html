@@ -1,1 +1,10 @@
-<input [formControl]="query" [data]="lijst" (input)="autocomplete()" )>
+<label>Search:</label>
+<input type="text" [formControl]="query" (input)="autocomplete()">
+
+<div></div>
+
+<ul>
+  <li *ngFor="let result of results">{{result | contactName}}</li>
+</ul>
+
+<div></div>

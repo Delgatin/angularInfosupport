@@ -7,7 +7,7 @@ import {FormControl} from '@angular/forms';
   styleUrls: ['./autocompleter.component.css']
 })
 export class AutocompleterComponent implements OnInit {
-  query: FormControl = new FormControl();
+  query = new FormControl();
   @Input() data: any[];
   results: any[];
 
@@ -20,7 +20,7 @@ export class AutocompleterComponent implements OnInit {
     this.results = [];
     for (const result of this.data) {
       for (const prop of Object.keys(result)) {
-        if (result[prop].includes(this.query.value)) {
+        if (result[prop] && result[prop].toString().toLowerCase().includes(this.query.value.toString().toLowerCase())) {
           this.results.push(result);
           break;
         }
