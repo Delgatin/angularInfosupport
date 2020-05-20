@@ -7,18 +7,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactNamePipe } from './pipes/contact-name.pipe';
 import { AutocompleterComponent } from './components/autocompleter/autocompleter.component';
+import { LifecycleComponent } from './components/lifecycle/lifecycle.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactNamePipe,
-    AutocompleterComponent
+    AutocompleterComponent,
+    LifecycleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

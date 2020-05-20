@@ -53,5 +53,8 @@
   <input type="text" [(ngModel)]="newContact.email" name="email" id="inputEmail" class="form-control">
   <button class="btn btn-primary">Add</button>
 </form>
+
+<button (click)="changeShowHideLifecycle()">Show/Hide lifecycle</button>
+<app-lifecycle *ngIf="showHideLifecycle"></app-lifecycle>
 </body>
 </html>
